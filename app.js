@@ -28,7 +28,7 @@ const PORT = 3000; //process.env.PORT || 8445;
 const WIT_TOKEN = "YH62EY6DRFQDVQVLJH526XQMCWWN7CRD"; //process.env.WIT_TOKEN;
 
 // Messenger API parameters
-const FB_PAGE_ID = 1607770722882179; //process.env.FB_PAGE_ID;
+const FB_PAGE_ID = 217795601932576; //process.env.FB_PAGE_ID;
 if (!FB_PAGE_ID) {
   throw new Error('missing FB_PAGE_ID');
 }
