@@ -173,7 +173,7 @@ if (req.query['hub.mode'] === 'subscribe' &&
 // Message handler
 app.post('/', (req, res) => {
   // Parsing the Messenger API response
-  const messaging = getFirstMessagingEntry(req.body);
+  const messaging = req.body;
   console.log('messaging', messaging);
 if (messaging && messaging.message && messaging.recipient.id === FB_PAGE_ID) {
   console.log('Yay! We got a new message!');
