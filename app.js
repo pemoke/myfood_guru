@@ -18,25 +18,25 @@ const express = require('express');
 const request = require('request');
 
 // When not cloning the `node-wit` repo, replace the `require` like so:
-// const Wit = require('node-wit').Wit;
-const Wit = require('../').Wit;
+const Wit = require('node-wit').Wit;
+// const Wit = require('../').Wit;
 
 // Webserver parameter
 const PORT = process.env.PORT || 8445;
 
 // Wit.ai parameters
-const WIT_TOKEN = process.env.WIT_TOKEN;
+const WIT_TOKEN = "YH62EY6DRFQDVQVLJH526XQMCWWN7CRD"; //process.env.WIT_TOKEN;
 
 // Messenger API parameters
-const FB_PAGE_ID = process.env.FB_PAGE_ID;
+const FB_PAGE_ID = '217795601932576'; //process.env.FB_PAGE_ID;
 if (!FB_PAGE_ID) {
   throw new Error('missing FB_PAGE_ID');
 }
-const FB_PAGE_TOKEN = process.env.FB_PAGE_TOKEN;
+const FB_PAGE_TOKEN = "EAAXLMXjKTyIBAOPR8wVM9oKf3h9gQoZBcwREWrujr2HHhJWXB0byEUecIcczKfAZAZAvudoXjkhlUZC7vZAmDrdePp6ZArd6ZCgRFC4hmlhySRj7Tictq5PBZALrdVyTM5J2Gugae1VAnjZCoOtRQ2LYbGm0NfDov7rSenzmVvv05fQZDZD"; //process.env.FB_PAGE_TOKEN;
 if (!FB_PAGE_TOKEN) {
   throw new Error('missing FB_PAGE_TOKEN');
 }
-const FB_VERIFY_TOKEN = process.env.FB_VERIFY_TOKEN;
+const FB_VERIFY_TOKEN = "my_verify_token"; //process.env.FB_VERIFY_TOKEN;
 
 // Messenger API specific code
 
@@ -46,7 +46,7 @@ const fbReq = request.defaults({
   uri: 'https://graph.facebook.com/me/messages',
   method: 'POST',
   json: true,
-  qs: { access_token: FB_PAGE_TOKEN },
+  qs: {access_token: FB_PAGE_TOKEN},
   headers: {'Content-Type': 'application/json'},
 });
 
