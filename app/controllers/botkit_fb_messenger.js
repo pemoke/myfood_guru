@@ -132,7 +132,7 @@ controller.hears(['diet'], 'message_received', function(bot, message) {
                 id: message.user,
               };
             }
-            user.diet = convo.extractResponse('dietname');
+            user.diet = convo.extractResponse('dietname').toLowerCase();
             controller.storage.users.save(user, function(err, id) {
               bot.reply(message, 'Got it. I will search meals based on ' + user.diet + ' from now on.');
             });
@@ -213,7 +213,7 @@ controller.hears(['health'], 'message_received', function(bot, message) {
                 id: message.user,
               };
             }
-            user.health = convo.extractResponse('healthname');
+            user.health = convo.extractResponse('healthname').toLowerCase();
             controller.storage.users.save(user, function(err, id) {
               bot.reply(message, 'From now on, I will search meals suited for ' + user.health + ' health');
             });
